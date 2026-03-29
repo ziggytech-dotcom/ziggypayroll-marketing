@@ -58,8 +58,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${spaceGrotesk.variable} h-full`}>
-      <body className="min-h-full flex flex-col antialiased bg-[#0f0a0a] text-white">
+    <html lang="en" className={spaceGrotesk.variable} style={{ height: "100%" }}>
+      <body style={{ minHeight: "100%", display: "flex", flexDirection: "column", background: "#0f0a0a", color: "#ffffff", WebkitFontSmoothing: "antialiased" }}>
         {children}
       </body>
     </html>
