@@ -11,14 +11,9 @@ export default function Nav() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-0">
-            <span className="text-xl font-bold" style={{ color: "#ff1744" }}>
-              Ziggy
-            </span>
-            <span className="text-xl font-bold" style={{ color: "#84cc16" }}>
-              Payroll
-            </span>
-          </Link>
+          <a href="/" style={{ textDecoration: "none", display: "flex", alignItems: "center" }}>
+            <img src="/ziggypayroll-wordmark-v3.png" alt="ZiggyPayroll" style={{ height: 32, width: "auto" }} />
+          </a>
 
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-8">
