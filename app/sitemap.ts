@@ -1,59 +1,14 @@
-import { MetadataRoute } from "next";
-
+import type { MetadataRoute } from "next";
 export const dynamic = "force-static";
-
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://ziggypayroll.com";
-  const now = new Date().toISOString();
-
-  return [
-    {
-      url: baseUrl,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 1,
-    },
-    {
-      url: `${baseUrl}/features`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/pricing`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/vs/gusto`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/vs/adp`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/contractors`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/agencies`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/gig-economy`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-  ];
+  const now = new Date();
+  const routes = [
+    { url: "/", priority: 1.0, changeFrequency: "weekly" as const },
+    { url: "/features", priority: 0.9, changeFrequency: "monthly" as const },
+    { url: "/pricing", priority: 0.9, changeFrequency: "monthly" as const },
+    { url: "/blog", priority: 0.7, changeFrequency: "weekly" as const },
+    { url: "/changelog", priority: 0.6, changeFrequency: "weekly" as const },
+    { url: "/contact", priority: 0.8, changeFrequency: "monthly" as const },  ];
+  return routes.map((route) => ({ url: `${baseUrl}${route.url}`, lastModified: now, changeFrequency: route.changeFrequency, priority: route.priority }));
 }
