@@ -1,187 +1,64 @@
-import type { Metadata } from "next";
-import Link from "next/link";
-import Nav from "../components/Nav";
-import Footer from "../components/Footer";
+import Link from 'next/link'
+import { MarketingNav } from '@/app/components/Nav'
+import { MarketingFooter } from '@/app/components/Footer'
 
-export const metadata: Metadata = {
-  title: "Features — 1099 Contractor Management Tools",
-  description:
-    "Everything you need to manage 1099 independent contractors: W-9 collection, ACH payments, 1099-NEC e-filing, contractor portal, time tracking, and payment approval workflows.",
-  alternates: { canonical: "https://ziggypayroll.com/features" },
-};
-
-const featureSections = [
-  {
-    id: "contractor-management",
-    icon: "👥",
-    color: "#84cc16",
-    title: "Contractor Management",
-    tagline: "Onboard contractors in minutes, not days",
-    desc: "ZiggyPayroll is built exclusively for 1099 independent contractors — not W-2 employees. Every tool is designed around the contractor relationship.",
-    features: [
-      {
-        title: "Digital W-9 Collection",
-        desc: "Invite contractors via email. They fill out their W-9 digitally — you get a stored, verified copy. No chasing paperwork, no scanning, no filing cabinets.",
-      },
-      {
-        title: "Contractor Profiles",
-        desc: "Every contractor has a full profile: contact info, tax ID, payment history, documents, and notes. Everything in one place.",
-      },
-      {
-        title: "Contractor Self-Service Portal",
-        desc: "Contractors get their own login. They can view payment history, update direct deposit info, download their 1099s, and submit hours — without emailing you.",
-      },
-      {
-        title: "Onboarding Checklists",
-        desc: "Custom onboarding flows for each contractor type. Make sure you collect everything you need before the first payment.",
-      },
-    ],
-  },
-  {
-    id: "payments",
-    icon: "💸",
-    color: "#84cc16",
-    title: "Payments",
-    tagline: "Pay contractors fast, accurately, and on record",
-    desc: "ACH bank transfers, batch payments, and full audit trails. No more Venmo, no more Zelle, no more spreadsheet tracking.",
-    features: [
-      {
-        title: "ACH Direct Payments",
-        desc: "Send money directly to any US bank account. Standard ACH settles in 1-3 business days. Every payment is logged automatically.",
-      },
-      {
-        title: "Batch Payments",
-        desc: "Pay multiple contractors at once. Review the batch, approve it, and ZiggyPayroll sends everything in one shot.",
-      },
-      {
-        title: "Payment Approval Workflow",
-        desc: "Set up approval gates before payments go out. One-person approval or multi-step — you decide. Full audit trail for every payment.",
-      },
-      {
-        title: "Payment History & Records",
-        desc: "Every payment is recorded with date, amount, contractor, and payment method. Export to CSV any time for your records or accountant.",
-      },
-    ],
-  },
-  {
-    id: "tax-compliance",
-    icon: "🧾",
-    color: "#84cc16",
-    title: "Tax & Compliance",
-    tagline: "1099s handled. Year-end sorted.",
-    desc: "ZiggyPayroll tracks all contractor payments throughout the year and auto-generates 1099-NEC forms come January. E-file to the IRS with one click via Tax1099.",
-    features: [
-      {
-        title: "1099-NEC Generation",
-        desc: "At year-end, ZiggyPayroll automatically identifies contractors you paid $600+ and generates their 1099-NEC forms. No manual math.",
-      },
-      {
-        title: "E-Filing via Tax1099",
-        desc: "File 1099s directly with the IRS via our Tax1099 integration. No paper forms, no manual submission. Email copies go straight to contractors.",
-      },
-      {
-        title: "W-9 Storage & Audit",
-        desc: "Every W-9 is stored securely for 7 years. Audit-ready any time. TIN verification included.",
-      },
-      {
-        title: "State Filing Support",
-        desc: "State 1099 filing requirements vary. ZiggyPayroll handles state-level submissions where required.",
-      },
-    ],
-  },
-  {
-    id: "reporting",
-    icon: "📊",
-    color: "#84cc16",
-    title: "Reporting",
-    tagline: "Know exactly where your contractor spend goes",
-    desc: "Real-time dashboards, payment summaries, and exportable reports. Get a clear picture of your contractor workforce at any time.",
-    features: [
-      {
-        title: "Contractor Spend Dashboard",
-        desc: "See total payments by contractor, by month, and by project. Spot your highest-paid contractors at a glance.",
-      },
-      {
-        title: "Payment History Export",
-        desc: "Export full payment history to CSV for your accountant, bookkeeper, or internal records. Filter by date range, contractor, or status.",
-      },
-      {
-        title: "Year-End Summary Reports",
-        desc: "Generate year-end payment summaries for every contractor. Share directly from ZiggyPayroll or export as PDF.",
-      },
-      {
-        title: "Audit Trail",
-        desc: "Every action logged: who approved what, when payments were sent, when forms were filed. Full accountability for your records.",
-      },
-    ],
-  },
-];
+const features = [
+  { title: `1099 Contractor Management`, desc: `Manage all your 1099 contractors in one place. Track payments and generate year-end 1099-NEC forms.`, bullets: [`Contractor onboarding portal`, `Payment history per contractor`, `Year-end 1099-NEC generation`, `Electronic 1099 filing`, `W-9 collection and storage`, `Contractor portal access`] },
+  { title: `W-2 Payroll`, desc: `Run payroll for W-2 employees with automatic tax calculations, withholding, and direct deposit.`, bullets: [`Automatic tax calculations`, `Federal and state withholding`, `Direct deposit`, `Pay stub generation`, `Year-end W-2 forms`, `New hire reporting`] },
+  { title: `Time Tracking`, desc: `Built-in time tracking for hourly contractors and employees. Approve timesheets and run payroll in two clicks.`, bullets: [`Web and mobile time entry`, `Project-based tracking`, `Manager approval workflows`, `Timesheet export`, `Overtime calculations`, `Integration with payroll`] },
+  { title: `Expense Management`, desc: `Contractors submit expenses, you approve and reimburse in the next payroll run.`, bullets: [`Mobile receipt capture`, `Expense categories`, `Manager approval flow`, `Reimbursement in payroll`, `Expense reports export`, `Policy limits enforcement`] },
+  { title: `Contractor Portal`, desc: `Every contractor gets their own portal to view pay history, download 1099 forms, and update banking info.`, bullets: [`Pay stub access`, `1099 document download`, `W-9 submission`, `Banking info update`, `Payment history`, `Mobile-friendly portal`] },
+  { title: `Direct Deposit`, desc: `Pay contractors and employees via ACH direct deposit. Same-day or next-day funding available.`, bullets: [`ACH direct deposit`, `Same-day funding option`, `Next-day funding standard`, `No per-transaction fees`, `Multiple bank accounts`, `International support (coming soon)`] },
+]
 
 export default function FeaturesPage() {
   return (
-    <>
-      <Nav />
-      <main className="flex-1">
-        {/* Hero */}
-        <section className="border-b border-[#27272a] py-16 md:py-20 text-center">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="inline-block bg-[#84cc16]/10 border border-[#84cc16]/20 rounded-full px-4 py-1.5 text-sm text-[#84cc16] font-medium mb-6">
-              Features
-            </div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              Built for 1099 contractors. Only.
-            </h1>
-            <p className="text-[#a1a1aa] text-lg max-w-2xl mx-auto">
-              No W-2 payroll. No benefits. No HR tools. Just everything you need to manage, pay, and file for your 1099 independent contractors.
-            </p>
-          </div>
-        </section>
-
-        {/* Feature Sections */}
-        {featureSections.map((section, i) => (
-          <section
-            key={section.id}
-            id={section.id}
-            className={`border-b border-[#27272a] py-16 md:py-20 ${i % 2 === 1 ? "bg-[#18181b]/30" : ""}`}
-          >
-            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="flex flex-col md:flex-row gap-12 items-start">
-                {/* Left */}
-                <div className="md:w-1/3">
-                  <div className="text-4xl mb-4">{section.icon}</div>
-                  <h2 className="text-2xl md:text-3xl font-bold mb-3">{section.title}</h2>
-                  <p className="text-[#84cc16] font-semibold mb-3">{section.tagline}</p>
-                  <p className="text-[#a1a1aa] text-sm leading-relaxed">{section.desc}</p>
-                </div>
-                {/* Right */}
-                <div className="md:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {section.features.map((f) => (
-                    <div key={f.title} className="bg-[#18181b] border border-[#27272a] rounded-xl p-5">
-                      <h3 className="font-bold mb-2">{f.title}</h3>
-                      <p className="text-[#a1a1aa] text-sm leading-relaxed">{f.desc}</p>
-                    </div>
+    <div className="bg-[#0a0a0a] min-h-screen" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>
+      <MarketingNav />
+      <section className="relative overflow-hidden pt-20 pb-16 px-4">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#84cc16]/8 rounded-full blur-3xl pointer-events-none" />
+        <div className="max-w-4xl mx-auto text-center relative">
+          <p className="text-xs font-semibold uppercase tracking-widest text-[#84cc16] mb-4">Features</p>
+          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">Everything ZiggyPayroll can do</h1>
+          <p className="text-xl text-[#b3b3b3] max-w-2xl mx-auto mb-8">Every feature explained. No fluff.</p>
+          <Link href="https://app.ziggypayroll.com/signup" className="inline-flex items-center gap-2 px-8 py-4 bg-[#84cc16] text-white rounded-xl font-semibold text-lg hover:opacity-90 transition-all">
+            Start Free Trial — 14 days free
+          </Link>
+        </div>
+      </section>
+      <section className="py-16 px-4">
+        <div className="max-w-5xl mx-auto space-y-16">
+          {features.map((f, i) => (
+            <div key={f.title} className={`flex flex-col ${i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} gap-12 items-start`}>
+              <div className="flex-1">
+                <h2 className="text-3xl font-bold text-white mb-4">{f.title}</h2>
+                <p className="text-lg text-[#b3b3b3] leading-relaxed mb-6">{f.desc}</p>
+                <ul className="space-y-2">
+                  {f.bullets.map((b) => (
+                    <li key={b} className="flex items-center gap-3 text-[#b3b3b3]">
+                      <div className="w-5 h-5 rounded-full bg-[#84cc16]/20 border border-[#84cc16]/40 flex items-center justify-center flex-shrink-0">
+                        <svg className="w-3 h-3 text-[#84cc16]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" /></svg>
+                      </div>
+                      {b}
+                    </li>
                   ))}
-                </div>
+                </ul>
+              </div>
+              <div className="flex-1 bg-[#111111] border border-[#1f1f1f] rounded-2xl aspect-video flex items-center justify-center">
+                <p className="text-[#555] text-sm">Screenshot coming soon</p>
               </div>
             </div>
-          </section>
-        ))}
-
-        {/* CTA */}
-        <section className="py-20 text-center">
-          <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold mb-4">See it for yourself</h2>
-            <p className="text-[#a1a1aa] mb-8">14-day free trial. No credit card required. Set up in 5 minutes.</p>
-            <Link
-              href="/pricing"
-              className="inline-block bg-[#84cc16] text-black font-bold px-8 py-4 rounded-xl text-lg hover:bg-[#65a30d] transition-colors"
-            >
-              Start free trial — $39/mo
-            </Link>
-          </div>
-        </section>
-      </main>
-      <Footer />
-    </>
-  );
+          ))}
+        </div>
+      </section>
+      <section className="py-24 px-4 text-center">
+        <div className="max-w-2xl mx-auto">
+          <h2 className="text-4xl font-bold text-white mb-6">Ready to see it in action?</h2>
+          <p className="text-xl text-[#b3b3b3] mb-8">14-day free trial. No credit card required.</p>
+          <Link href="https://app.ziggypayroll.com/signup" className="inline-flex items-center gap-2 px-10 py-5 bg-[#84cc16] text-white rounded-xl font-bold text-xl hover:opacity-90 transition-all">Start Free Trial</Link>
+        </div>
+      </section>
+      <MarketingFooter />
+    </div>
+  )
 }
