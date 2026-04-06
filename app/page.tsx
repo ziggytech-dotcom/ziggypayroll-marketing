@@ -5,12 +5,54 @@ import { MarketingNav } from '@/app/components/Nav'
 import { MarketingFooter } from '@/app/components/Footer'
 
 const features = [
-  { title: `1099 Contractor Management`, desc: `Manage all your 1099 contractors in one place. Track payments and generate year-end 1099-NEC forms.` },
-  { title: `W-2 Payroll`, desc: `Run payroll for W-2 employees with automatic tax calculations, withholding, and direct deposit.` },
-  { title: `Time Tracking`, desc: `Built-in time tracking for hourly contractors and employees. Approve timesheets and run payroll in two clicks.` },
-  { title: `Expense Management`, desc: `Contractors submit expenses, you approve and reimburse in the next payroll run.` },
-  { title: `Contractor Portal`, desc: `Every contractor gets their own portal to view pay history, download 1099 forms, and update banking info.` },
-  { title: `Direct Deposit`, desc: `Pay contractors and employees via ACH direct deposit. Same-day or next-day funding available.` },
+  {
+    icon: (
+      <svg className="w-6 h-6 text-[#84cc16]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
+      </svg>
+    ),
+    title: `1099 Contractor Management`, desc: `Manage all your 1099 contractors in one place. Track payments and generate year-end 1099-NEC forms.`
+  },
+  {
+    icon: (
+      <svg className="w-6 h-6 text-[#84cc16]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+      </svg>
+    ),
+    title: `W-2 Payroll`, desc: `Run payroll for W-2 employees with automatic tax calculations, withholding, and direct deposit.`
+  },
+  {
+    icon: (
+      <svg className="w-6 h-6 text-[#84cc16]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+    ),
+    title: `Time Tracking`, desc: `Built-in time tracking for hourly contractors and employees. Approve timesheets and run payroll in two clicks.`
+  },
+  {
+    icon: (
+      <svg className="w-6 h-6 text-[#84cc16]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+      </svg>
+    ),
+    title: `Expense Management`, desc: `Contractors submit expenses, you approve and reimburse in the next payroll run.`
+  },
+  {
+    icon: (
+      <svg className="w-6 h-6 text-[#84cc16]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+      </svg>
+    ),
+    title: `Contractor Portal`, desc: `Every contractor gets their own portal to view pay history, download 1099 forms, and update banking info.`
+  },
+  {
+    icon: (
+      <svg className="w-6 h-6 text-[#84cc16]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+      </svg>
+    ),
+    title: `Direct Deposit`, desc: `Pay contractors and employees via ACH direct deposit. Same-day or next-day funding available.`
+  },
 ]
 const heroFacts = [
   '$39/mo for 15 contractors — Gusto charges $109',
@@ -82,7 +124,10 @@ export default function HomePage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {features.map((f) => (
-              <div key={f.title} className="bg-[#111111] border border-[#1f1f1f] rounded-2xl p-6 md:p-8 hover:border-[#84cc16]/30 transition-all">
+              <div key={f.title} className="bg-[#111111] border border-[#1f1f1f] rounded-2xl p-6 md:p-8 hover:border-[#84cc16]/30 hover:shadow-[0_0_30px_rgba(132,204,22,0.08)] transition-all group">
+                <div className="w-12 h-12 rounded-xl bg-[#84cc16]/10 border border-[#84cc16]/20 flex items-center justify-center mb-5 group-hover:bg-[#84cc16]/20 transition-colors">
+                  {f.icon}
+                </div>
                 <h3 className="text-xl font-semibold text-white mb-3">{f.title}</h3>
                 <p className="text-[#b3b3b3] leading-relaxed">{f.desc}</p>
               </div>
