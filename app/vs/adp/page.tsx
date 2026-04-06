@@ -28,7 +28,7 @@ const rows = [
 export default function VsAdpPage() {
   return (
     <>
-      <Nav />
+      <MarketingNav />
       <main className="flex-1">
         {/* Hero */}
         <section className="border-b border-[#27272a] py-16 md:py-20">
@@ -164,7 +164,7 @@ export default function VsAdpPage() {
           </div>
         </section>
       </main>
-      <Footer />
+      <MarketingFooter />
     </>
   );
 }

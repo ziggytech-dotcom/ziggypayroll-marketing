@@ -48,8 +48,7 @@ export default function HomePage() {
             ZiggyPayroll — Payroll for local business
           </div>
           <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight tracking-tight mb-6">
-            Payroll for real small businesses.{' '}
-            {tagline.split('. ').length > 1 && <span className="text-[#84cc16]"></span>}
+            Payroll for real small businesses
           </h1>
           <p className="text-xl md:text-2xl text-[#b3b3b3] max-w-3xl mx-auto leading-relaxed mb-10">
             Gusto charges $49/mo plus $6 per contractor. For a 10-contractor team that's $109/month. We cover 15 contractors for $39/mo.

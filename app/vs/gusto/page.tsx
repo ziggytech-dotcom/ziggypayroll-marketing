@@ -51,7 +51,7 @@ export default function VsGustoPage() {
         }}
       />
 
-      <Nav />
+      <MarketingNav />
 
       <main>
         {/* ── Hero ─────────────────────────────────────────────────── */}
@@ -694,7 +694,7 @@ export default function VsGustoPage() {
         </section>
       </main>
 
-      <Footer />
+      <MarketingFooter />
     </>
   );
 }
