@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Script from "next/script";
-import Nav from "../../components/Nav";
-import Footer from "../../components/Footer";
+import { MarketingNav } from '@/app/components/Nav';
+import { MarketingFooter } from '@/app/components/Footer';
 
 export const metadata: Metadata = {
   title: "ZiggyPayroll vs Gusto — Which Is Right for 1099 Contractors?",
